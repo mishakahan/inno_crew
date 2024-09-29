@@ -71,6 +71,9 @@ with st.sidebar:
             placeholder="Create a list of ideas on using the byproducts of coffee plant and products generated using coffee creation process, broken down by feasibility, desirability and viability and save the file in an .md format. Do include the sources as well for credibility.")
 
         submitted = st.form_submit_button("Submit")
+        
+    # Add a toggle for verbose output at the bottom of the sidebar
+    verbose_toggle = st.checkbox("Enable Verbose Mode for Agents")
 
 st.divider()
 
@@ -174,6 +177,10 @@ if (submitted):
     #                          quality="standard",
     #                          n=1)
 
+
+
+    verbose_mode = verbose_toggle
+
     # Agents
     manager = Agent(
         role="Project Manager",
@@ -186,7 +193,7 @@ if (submitted):
             "If anything is missing or not at the right level of quality, send it back for revision.\n"
         ),
         # allow_delegation=True,
-        verbose=False
+        verbose=verbose_mode
     )
 
     domain_expert = Agent(
@@ -196,7 +203,7 @@ if (submitted):
                 "You are a world class domain expert in the sector of " + sector + ". You are particularly knowledgeable on the key resource {key_resource}."
         ),
         # allow_delegation=False,
-        verbose=False
+        verbose=verbose_mode
     )
 
     engineer = Agent(
@@ -208,7 +215,7 @@ if (submitted):
 
         ),
         # allow_delegation=False,
-        verbose=False
+        verbose=verbose_mode
     )
 
     marketer = Agent(
@@ -219,7 +226,7 @@ if (submitted):
                 "You know what clients and consumers want and can rapidly assess whether they will buy it, in what quantities and for what price."
         ),
         # allow_delegation=False,
-        verbose=False
+        verbose=verbose_mode
     )
 
     # Tasks
