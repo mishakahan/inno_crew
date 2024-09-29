@@ -41,20 +41,33 @@ with st.sidebar:
             "Provide your OpenAPI key", type="password")
         # st.write(model_option + openapi_key)
         st.divider()
+        
+        st.subheader("Sector")
         sector = st.text_input(
-            "Provide information on your industry sector", placeholder="B2B vertically integrated pinapple canning and elaboration")
+            "Provide information on your industry sector", 
+            placeholder="B2B vertically integrated pinapple canning and elaboration")
+
+        st.subheader("Strategic priorities")
         strategic_priorities = st.text_area(
             "Describe your key strategic priorities",
             placeholder="Identifying desirable and feasible innovations to bring to market")
+
+        st.subheader("Key resource")
         key_resource = st.text_input(
-            "Kindly input your key resource (e.g., asset)", placeholder="Pineapple plants")
+            "What is the key resource or asset you utilize around which you want to generate opportunities?", placeholder="Pineapple plants")
+
+        st.subheader("Other resources")
         resources = st.text_area(
-            "Kindly input your other important resource(s)",
+            "What are other important resource(s) for your company?",
             placeholder="Pineapple plantations, Pineapple canning plants, with all required machinery to produce canned pineapple")
+
+        st.subheader("Clients")
         clients = st.text_area(
             "Describe your clients", placeholder="Retailers and distributors")
+
+        st.subheader("Your challenge")
         challenge = st.text_area(
-            "What challenge do you want to solve today?",
+            "What specific challenge do you want to solve today?",
             placeholder="Create a list of ideas on using the byproducts of coffee plant and products generated using coffee creation process, broken down by feasibility, desirability and viability and save the file in an .md format. Do include the sources as well for credibility.")
 
         submitted = st.form_submit_button("Submit")
