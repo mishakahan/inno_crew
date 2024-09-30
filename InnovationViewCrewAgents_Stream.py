@@ -396,7 +396,7 @@ if (submitted):
     #assistant_response = llm(messages)
 
     # Append the assistant's response to the session state
-    st.session_state.messages.append({"role": "assistant", "content": assistant_response})
+    #st.session_state.messages.append({"role": "assistant", "content": assistant_response})
 
     # Display the assistant's message in the chat interface
     st.chat_message("assistant").write(assistant_response)
