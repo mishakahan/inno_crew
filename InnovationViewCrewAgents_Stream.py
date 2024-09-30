@@ -273,7 +273,7 @@ if (submitted):
            "Reason well add a coulmn describing processing feasibility. "
            "Keep in mind the sector, client, resources and challenge for context."
 
-           "Stop and ask the user for confirmation, summarizing what you have done."
+           #"Stop and ask the user for confirmation, summarizing what you have done."
 
            "Sector: {sector}\n"
            "Clients: {clients}\n"
