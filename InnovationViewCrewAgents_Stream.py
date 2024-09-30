@@ -252,7 +252,7 @@ if (submitted):
          "and possible uses or benefits"
      ),
      tools=[],
-     human_input=True,
+     #human_input=True,
      agent=domain_expert
  )
 
