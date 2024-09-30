@@ -252,7 +252,7 @@ if (submitted):
          "and possible uses or benefits"
      ),
      tools=[],
-     human_input=True,
+     #human_input=True,
      agent=domain_expert
  )
 
@@ -380,20 +380,20 @@ if (submitted):
 
     #add a chat input to allow the user to respond to the LLM
     # Chat input from the user
-    user_input = st.chat_input("Send a message")
+    #user_input = st.chat_input("Send a message")
 
-    if user_input:
+    #if user_input:
     # Append the user's message to the session state
-        st.session_state.messages.append({"role": "user", "content": user_input})
+    #    st.session_state.messages.append({"role": "user", "content": user_input})
 
     # Display the user's message in the chat interface
-        st.chat_message("user").write(user_input)
+    #    st.chat_message("user").write(user_input)
 
     # Mock LLM response (Here, you would normally send this input to your LLM for further processing)
-    llm = ChatOpenAI(model_name="gpt-4", api_key=openapi_key)
+    #llm = ChatOpenAI(model_name="gpt-4", api_key=openapi_key)
 
-    messages = [{"role": "user", "content": user_input}]
-    assistant_response = llm(messages)
+    #messages = [{"role": "user", "content": user_input}]
+    #assistant_response = llm(messages)
 
     # Append the assistant's response to the session state
     st.session_state.messages.append({"role": "assistant", "content": assistant_response})
