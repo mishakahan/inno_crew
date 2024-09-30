@@ -378,7 +378,7 @@ if (submitted):
     for msg in st.session_state.messages:
         st.chat_message(msg["role"]).write(msg["content"])
 
-    #add a chta input to allow the user to respond to the LLM
+    #add a chat input to allow the user to respond to the LLM
     # Chat input from the user
     user_input = st.chat_input("Send a message")
 
@@ -392,7 +392,8 @@ if (submitted):
     # Mock LLM response (Here, you would normally send this input to your LLM for further processing)
     llm = ChatOpenAI(model_name="gpt-4", api_key=openapi_key)
 
-    assistant_response = llm(user_input)
+    messages = [{"role": "user", "content": user_input}]
+    assistant_response = llm(messages)
 
     # Append the assistant's response to the session state
     st.session_state.messages.append({"role": "assistant", "content": assistant_response})
