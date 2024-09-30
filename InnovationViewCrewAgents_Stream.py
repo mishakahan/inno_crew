@@ -390,7 +390,7 @@ if (submitted):
         st.chat_message("user").write(user_input)
 
     # Mock LLM response (Here, you would normally send this input to your LLM for further processing)
-        llm = ChatOpenAI(model_name="gpt-4", api_key=openapi_key)
+    llm = ChatOpenAI(model_name="gpt-4", api_key=openapi_key)
 
     assistant_response = llm(user_input)
 
