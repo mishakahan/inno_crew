@@ -286,7 +286,7 @@ if (submitted):
            "the rationale for the feasibiilty of processing or extraction"
        ),
        tools=[website_search_tool],
-       human_input=True,
+       #human_input=True,
        agent=engineer
 )
 
