@@ -273,7 +273,7 @@ if (submitted):
            "Reason well add a coulmn describing processing feasibility. "
            "Keep in mind the sector, client, resources and challenge for context."
 
-           #"Stop and ask the user for confirmation, summarizing what you have done."
+           "Stop and ask the user for confirmation, summarizing what you have done."
 
            "Sector: {sector}\n"
            "Clients: {clients}\n"
@@ -286,7 +286,7 @@ if (submitted):
            "the rationale for the feasibiilty of processing or extraction"
        ),
        tools=[website_search_tool],
-       #human_input=True,
+       human_input=True,
        agent=engineer
 )
 
@@ -377,29 +377,6 @@ if (submitted):
     # Display existing messages
     for msg in st.session_state.messages:
         st.chat_message(msg["role"]).write(msg["content"])
-
-    #add a chat input to allow the user to respond to the LLM
-    # Chat input from the user
-    user_input = st.chat_input("Send a message")
-
-    if user_input:
-    # Append the user's message to the session state
-        st.session_state.messages.append({"role": "user", "content": user_input})
-
-    # Display the user's message in the chat interface
-        st.chat_message("user").write(user_input)
-
-    # Mock LLM response (Here, you would normally send this input to your LLM for further processing)
-    llm = ChatOpenAI(model_name="gpt-4", api_key=openapi_key)
-
-    messages = [{"role": "user", "content": user_input}]
-    assistant_response = llm(messages)
-
-    # Append the assistant's response to the session state
-    st.session_state.messages.append({"role": "assistant", "content": assistant_response})
-
-    # Display the assistant's message in the chat interface
-    st.chat_message("assistant").write(assistant_response)
 
     # Play with planning, process, manager
 
