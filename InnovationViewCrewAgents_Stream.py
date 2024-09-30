@@ -384,21 +384,21 @@ if (submitted):
 
     if user_input:
     # Append the user's message to the session state
-    st.session_state.messages.append({"role": "user", "content": user_input})
+        st.session_state.messages.append({"role": "user", "content": user_input})
 
     # Display the user's message in the chat interface
-    st.chat_message("user").write(user_input)
+        st.chat_message("user").write(user_input)
 
     # Mock LLM response (Here, you would normally send this input to your LLM for further processing)
-    llm = ChatOpenAI(model_name="gpt-4", api_key=openapi_key)
+        llm = ChatOpenAI(model_name="gpt-4", api_key=openapi_key)
 
     assistant_response = llm(user_input)
 
     # Append the assistant's response to the session state
-    st.session_state.messages.append({"role": "assistant", "content": assistant_response})
+        st.session_state.messages.append({"role": "assistant", "content": assistant_response})
 
     # Display the assistant's message in the chat interface
-    st.chat_message("assistant").write(assistant_response)
+        st.chat_message("assistant").write(assistant_response)
 
     # Play with planning, process, manager
 
